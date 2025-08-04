@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Método de Idiomas - Deja de estudiar. Empieza a hablar.</title>
+    <!-- Incluye el CDN de Tailwind CSS para un diseño moderno y responsive -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fuente Inter de Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0c0a09; /* Fondo oscuro */
+        }
+        /* Estilos para el menú de hamburguesa */
+        #mobile-menu.hidden {
+            display: none;
+        }
+        /* Estilos para el gradiente de texto */
+        .highlight-text {
+            background-image: linear-gradient(to right, #fcd34d, #4ade80);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+        /* Estilos para el campo de entrada de voz */
+        #audio-input-container {
+            position: relative;
+        }
+        #mic-button {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            margin-right: 1rem;
+        }
+    </style>
+</head>
+<body class="bg-neutral-950 text-neutral-200">
+
+    <!-- Sección de Cabecera (Header) -->
+    <header class="bg-neutral-950 shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <!-- Logo o Nombre -->
+            <a href="#" class="text-2xl font-bold highlight-text">
+                [Tu Nombre]
+            </a>
+            
+            <!-- Menú de Navegación para Desktop -->
+            <ul class="hidden md:flex space-x-6 items-center">
+                <li><a href="#inicio" class="text-neutral-400 hover:text-white font-medium transition duration-300">Inicio</a></li>
+                <li><a href="#sobre-mi" class="text-neutral-400 hover:text-white font-medium transition duration-300">Sobre Mí</a></li>
+                <li><a href="#metodo" class="text-neutral-400 hover:text-white font-medium transition duration-300">El Método</a></li>
+                <li><a href="#precios" class="text-neutral-400 hover:text-white font-medium transition duration-300">Precios</a></li>
+                <li><a href="#ebook" class="text-neutral-400 hover:text-white font-medium transition duration-300">Ebook</a></li>
+                <li><a href="#contacto" class="text-neutral-400 hover:text-white font-medium transition duration-300">Contacto</a></li>
+                <li>
+                    <a href="#contacto" class="bg-indigo-600 text-white font-semibold py-2 px-4 rounded-full hover:bg-indigo-700 transition duration-300 shadow-md">
+                        Agenda tu clase
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Botón de Menú para Móvil (Hamburguesa) -->
+            <div class="md:hidden">
+                <button id="menu-button" class="text-neutral-400 hover:text-white focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Menú Desplegable para Móvil -->
+    <div id="mobile-menu" class="hidden md:hidden bg-neutral-900 shadow-md">
+        <ul class="flex flex-col items-center py-4 space-y-4">
+            <li><a href="#inicio" class="block w-full text-center text-neutral-400 hover:bg-neutral-800 py-2">Inicio</a></li>
+            <li><a href="#sobre-mi" class="block w-full text-center text-neutral-400 hover:bg-neutral-800 py-2">Sobre Mí</a></li>
+            <li><a href="#metodo" class="block w-full text-center text-neutral-400 hover:bg-neutral-800 py-2">El Método</a></li>
+            <li><a href="#precios" class="block w-full text-center text-neutral-400 hover:bg-neutral-800 py-2">Precios</a></li>
+            <li><a href="#ebook" class="block w-full text-center text-neutral-400 hover:bg-neutral-800 py-2">Ebook</a></li>
+            <li><a href="#contacto" class="block w-full text-center text-neutral-400 hover:bg-neutral-800 py-2">Contacto</a></li>
+            <li>
+                <a href="#contacto" class="w-full text-center bg-indigo-600 text-white font-semibold py-2 px-6 rounded-full hover:bg-indigo-700 mt-2 transition duration-300">
+                    Agenda tu clase
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Contenido Principal -->
+    <main>
+        <!-- Sección de Héroe (Hero) -->
+        <section id="inicio" class="bg-neutral-950 py-20 md:py-32 text-center">
+            <div class="container mx-auto px-4">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4">
+                    Deja de estudiar. Empieza a hablar.
+                </h1>
+                <p class="text-xl md:text-2xl text-neutral-400 mb-8 max-w-3xl mx-auto">
+                    ¿Por qué aprender con libros aburridos si puedes aprender con lo que te apasiona? Mi método de enseñanza se basa en <strong class="highlight-text">tus</strong> intereses, no en un currículo rígido.
+                </p>
+                <a href="#contacto" class="bg-indigo-600 text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-indigo-700 transition duration-300 shadow-lg transform hover:scale-105">
+                    Agenda tu clase de prueba
+                </a>
+            </div>
+        </section>
+
+        <!-- Sección "Las Claves de Mi Método" -->
+        <section class="py-16 md:py-24 bg-neutral-950">
+            <div class="relative bg-neutral-950 py-20">
+                <h2 class="text-2xl px-4 md:text-4xl lg:text-5xl font-bold text-white max-w-4xl leading-relaxed lg:leading-snug text-center mx-auto">
+                    ¿Te imaginas que la clave para hablar con fluidez no fuera memorizar, sino
+                    <span class="bg-gradient-to-r from-yellow-300 to-green-400 text-transparent bg-clip-text font-bold px-2 rounded-lg">
+                        tener una conversación real?
+                    </span>
+                </h2>
+            </div>
+        </section>
+
+        <!-- Sección "El Método" -->
+        <section id="metodo" class="py-16 md:py-24 bg-neutral-900 text-white">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    Mi Método: Conversación con propósito
+                </h2>
+                <p class="text-xl md:text-2xl mb-12 max-w-4xl mx-auto text-neutral-300">
+                    El centro de mis clases eres <strong class="underline">tú</strong>. En lugar de seguir un libro, nos sumergimos por completo en los temas que te motivan.
+                </p>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="p-6 bg-neutral-800 rounded-lg shadow-md backdrop-blur-sm">
+                        <h3 class="text-2xl font-bold mb-2">Tú eliges el terreno</h3>
+                        <p class="text-neutral-400">Tu hobby, tu profesión, tu película favorita... <strong class="font-bold">Tú</strong> me das tu fuente de interés, y yo me encargo del resto.</p>
+                    </div>
+                    <div class="p-6 bg-neutral-800 rounded-lg shadow-md backdrop-blur-sm">
+                        <h3 class="text-2xl font-bold mb-2">Aprendizaje útil</h3>
+                        <p class="text-neutral-400">La meta es que cada palabra y frase que aprendamos tenga una aplicación inmediata. ¿Necesitas preparar una presentación? Haremos exactamente eso.</p>
+                    </div>
+                    <div class="p-6 bg-neutral-800 rounded-lg shadow-md backdrop-blur-sm">
+                        <h3 class="text-2xl font-bold mb-2">Motivación en cada clase</h3>
+                        <p class="text-neutral-400">No hay nada más efectivo que aprender algo que realmente te interesa. La fluidez llega de forma natural cuando disfrutas el proceso.</p>
+                    </div>
+                </div>
+
+                <!-- Nueva funcionalidad con Gemini API: Generador de temas -->
+                <div class="mt-20 max-w-2xl mx-auto bg-neutral-800 p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-bold mb-4">¿No sabes por dónde empezar?</h3>
+                    <p class="text-neutral-400 mb-4">¡Usa la inteligencia artificial para generar ideas de conversación! ✨</p>
+                    <div class="flex flex-col md:flex-row gap-4">
+                        <input type="text" id="topic-input" placeholder="Ej. 'Me gusta la fotografía'" class="w-full p-3 rounded-lg border-2 border-neutral-700 bg-neutral-900 text-neutral-200 focus:outline-none focus:border-indigo-500 transition duration-300">
+                        <button id="generate-topics-button" class="bg-indigo-600 text-white font-bold py-3 px-6 rounded-full hover:bg-indigo-700 transition duration-300 flex-shrink-0">
+                            Generar Temas
+                        </button>
+                    </div>
+                    <div id="topics-results" class="mt-6 text-left">
+                        <!-- Aquí se mostrarán los resultados de la API -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Sección "Sobre Mí" -->
+        <section id="sobre-mi" class="py-16 md:py-24 bg-neutral-950">
+            <div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                        Un enfoque diferente, un resultado real.
+                    </h2>
+                    <p class="text-lg text-neutral-400 mb-4">
+                        Hola, soy <strong class="text-indigo-400">[Tu Nombre]</strong>, profesor de idiomas con un enfoque único.
+                    </p>
+                    <p class="text-lg text-neutral-400 mb-4">
+                        Tras años de enseñanza, me di cuenta de que el método tradicional no funcionaba para todos. Vi a muchos alumnos perder la motivación con libros que no les hablaban, y entendí que la verdadera fluidez no viene de la gramática, sino del <strong class="text-indigo-400">interés</strong>.
+                    </p>
+                    <p class="text-lg text-neutral-400">
+                        Por eso creé este método: un espacio donde <strong class="text-indigo-400">tus</strong> pasiones, <strong class="text-indigo-400">tus</strong> proyectos y <strong class="text-indigo-400">tus</strong> sueños son el centro de cada clase. Mi misión es simple: ayudarte a comunicarte de forma auténtica sobre lo que te mueve, para que el idioma no sea una barrera, sino una herramienta para vivir la vida que quieres.
+                    </p>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="https://placehold.co/400x400/171717/9ca3af?text=Tu+Foto" alt="Foto de [Tu Nombre]" class="rounded-full shadow-lg border-4 border-indigo-400" />
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Precios y Servicios -->
+        <section id="precios" class="py-16 md:py-24 bg-neutral-950">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-12">
+                    Invierte en una conversación que realmente te sirva.
+                </h2>
+                <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <!-- Tarjeta de Precios 1 -->
+                    <div class="p-8 rounded-xl shadow-lg border-2 bg-neutral-900 border-neutral-700 hover:border-indigo-600 text-neutral-300 transition-all duration-300 transform hover:-translate-y-2">
+                        <h3 class="text-2xl font-bold text-white mb-4">Clase individual</h3>
+                        <p class="text-4xl font-extrabold text-indigo-400 mb-6">[Precio]</p>
+                        <p class="text-lg mb-6">Ideal para probar el método, resolver dudas o enfocarse en un tema concreto.</p>
+                        <ul class="text-left text-neutral-400 space-y-2 mb-8">
+                            <li class="flex items-center"><svg class="w-5 h-5 text-indigo-400 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Plan de estudio personalizado.</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-indigo-400 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>1 hora de conversación enfocada.</li>
+                        </ul>
+                        <a href="#contacto" class="block bg-indigo-600 text-white font-bold py-3 px-8 rounded-full hover:bg-indigo-700 transition duration-300">Elegir plan</a>
+                    </div>
+                    <!-- Tarjeta de Precios 2 -->
+                    <div class="p-8 rounded-xl shadow-lg border-2 bg-neutral-900 border-neutral-700 hover:border-indigo-600 text-neutral-300 transition-all duration-300 transform hover:-translate-y-2">
+                        <h3 class="text-2xl font-bold text-white mb-4">Paquete de 5 clases</h3>
+                        <p class="text-4xl font-extrabold text-indigo-400 mb-6">[Precio]</p>
+                        <p class="text-lg mb-6">Perfecto para un progreso constante y comprometido con tu aprendizaje.</p>
+                        <ul class="text-left text-neutral-400 space-y-2 mb-8">
+                            <li class="flex items-center"><svg class="w-5 h-5 text-indigo-400 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Plan de estudio personalizado.</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-indigo-400 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Seguimiento de progreso.</li>
+                        </ul>
+                        <a href="#contacto" class="block bg-indigo-600 text-white font-bold py-3 px-8 rounded-full hover:bg-indigo-700 transition duration-300">Elegir plan</a>
+                    </div>
+                    <!-- Tarjeta de Precios 3 -->
+                    <div class="p-8 rounded-xl shadow-lg border-2 bg-neutral-900 border-indigo-600 text-neutral-100 transform -translate-y-2 relative">
+                        <h3 class="text-2xl font-bold text-white mb-4">Paquete de 10 clases</h3>
+                        <p class="text-4xl font-extrabold text-indigo-400 mb-6">[Precio]</p>
+                        <p class="text-lg mb-6">La mejor opción para un progreso notable, consistente y duradero.</p>
+                        <ul class="text-left text-neutral-400 space-y-2 mb-8">
+                            <li class="flex items-center"><svg class="w-5 h-5 text-indigo-400 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Todo lo anterior incluido.</li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-indigo-400 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Recursos y materiales exclusivos.</li>
+                        </ul>
+                        <div class="absolute top-0 right-0 mt-4 mr-4 text-sm font-bold text-green-400 bg-green-900 px-3 py-1 rounded-full">
+                            ¡La más popular!
+                        </div>
+                        <a href="#contacto" class="block bg-indigo-600 text-white font-bold py-3 px-8 rounded-full hover:bg-indigo-700 transition duration-300">Elegir plan</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Ebook -->
+        <section id="ebook" class="py-16 md:py-24 bg-neutral-900">
+            <div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12 max-w-5xl">
+                <div class="md:w-1/2">
+                    <img src="https://placehold.co/400x500/171717/9ca3af?text=Tu+Ebook" alt="Portada del Ebook" class="rounded-xl shadow-lg w-full h-auto" />
+                </div>
+                <div class="md:w-1/2 text-center md:text-left">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                        "Dejemos de aprender idiomas que no usamos." - El Ebook.
+                    </h2>
+                    <p class="text-lg text-neutral-400 mb-6">
+                        Descubre mi filosofía de enseñanza, aprende las claves para acelerar <strong class="text-indigo-400">tu</strong> aprendizaje y empieza a hablar de lo que realmente te interesa.
+                    </p>
+                    <form class="space-y-4">
+                        <input type="text" placeholder="Tu nombre" class="w-full p-3 rounded-lg border-2 border-neutral-700 bg-neutral-800 text-neutral-200 focus:outline-none focus:border-indigo-500 transition duration-300" required />
+                        <input type="email" placeholder="Tu correo electrónico" class="w-full p-3 rounded-lg border-2 border-neutral-700 bg-neutral-800 text-neutral-200 focus:outline-none focus:border-indigo-500 transition duration-300" required />
+                        <button type="submit" class="w-full bg-indigo-600 text-white font-bold py-3 rounded-full hover:bg-indigo-700 transition duration-300">
+                            Descargar el ebook gratis
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Contacto -->
+        <section id="contacto" class="py-16 md:py-24 bg-neutral-950 text-white">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    Hablemos de lo que te interesa.
+                </h2>
+                <p class="text-lg md:text-xl max-w-2xl mx-auto mb-8 text-neutral-400">
+                    ¿Listo para una clase que realmente te sirva? Agenda tu sesión de prueba o mándame un mensaje.
+                </p>
+                <div class="max-w-xl mx-auto space-y-8">
+                    <!-- Formulario de contacto original -->
+                    <form id="contact-form" class="space-y-4">
+                        <input type="text" placeholder="Tu nombre completo" class="w-full p-3 rounded-lg border-2 border-neutral-700 bg-neutral-800 text-neutral-200 focus:outline-none focus:border-indigo-500 transition duration-300" required />
+                        <input type="email" placeholder="Tu correo electrónico" class="w-full p-3 rounded-lg border-2 border-neutral-700 bg-neutral-800 text-neutral-200 focus:outline-none focus:border-indigo-500 transition duration-300" required />
+                        <textarea placeholder="¿Qué idioma quieres aprender y cuáles son tus intereses?" rows="4" class="w-full p-3 rounded-lg border-2 border-neutral-700 bg-neutral-800 text-neutral-200 focus:outline-none focus:border-indigo-500 transition duration-300" required></textarea>
+                        <button type="submit" class="w-full bg-indigo-600 text-white font-bold py-3 rounded-full hover:bg-indigo-800 transition duration-300">
+                            Enviar mensaje
+                        </button>
+                    </form>
+                    
+                    <!-- Nueva funcionalidad con Gemini API: Analizador de pronunciación -->
+                    <div class="mt-8 bg-neutral-800 p-8 rounded-xl shadow-lg text-center">
+                        <h3 class="text-2xl font-bold mb-4">¿Quieres probar tu pronunciación? ✨</h3>
+                        <p class="text-neutral-400 mb-4">Graba una frase y la IA te dará retroalimentación instantánea.</p>
+                        <div id="audio-input-container" class="mb-4">
+                            <input type="text" id="phrase-input" placeholder="Escribe la frase que quieres grabar" class="w-full p-3 rounded-lg border-2 border-neutral-700 bg-neutral-900 text-neutral-200 focus:outline-none focus:border-indigo-500 transition duration-300" />
+                            <button id="mic-button" class="bg-indigo-600 text-white p-3 rounded-full hover:bg-indigo-700 transition duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 14c1.66 0 2.99-1.34 2.99-3L15 5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3.93-3.4 7.1-7.3 7.1S4.7 14.93 4.7 11H3c0 4.84 3.71 8.86 8.35 9.93v3.07h1.3V21.03C17.29 19.96 21 15.94 21 11h-1.7z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div id="pronunciation-results" class="mt-4 text-left">
+                            <!-- Aquí se mostrarán los resultados del análisis -->
+                        </div>
+                        <p id="mic-status" class="text-sm text-neutral-500 mt-2">Presiona el micrófono para grabar.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie de Página (Footer) -->
+    <footer class="bg-neutral-900 text-neutral-400 py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 [Tu Nombre]. Todos los derechos reservados.</p>
+            <p class="mt-2 text-sm">Diseñado y creado para ayudarte a hablar.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts de la página -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuButton = document.getElementById('menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            const priceCards = document.querySelectorAll('#precios > div > div > div');
+            
+            // Función para manejar las llamadas a la API de Gemini con retroceso exponencial
+            async function fetchWithExponentialBackoff(url, options, retries = 3) {
+                try {
+                    const response = await fetch(url, options);
+                    if (!response.ok) {
+                        const errorData = await response.json();
+                        throw new Error(errorData.error.message || 'Error en la API de Gemini');
+                    }
+                    return response.json();
+                } catch (error) {
+                    if (retries > 0 && error.message.includes('429')) {
+                        const delay = Math.pow(2, 3 - retries) * 1000 + Math.random() * 1000;
+                        await new Promise(resolve => setTimeout(resolve, delay));
+                        return fetchWithExponentialBackoff(url, options, retries - 1);
+                    } else {
+                        throw error;
+                    }
+                }
+            }
+
+            // --- Funcionalidad del generador de temas (Gemini API) ---
+            const generateTopicsButton = document.getElementById('generate-topics-button');
+            const topicInput = document.getElementById('topic-input');
+            const topicsResults = document.getElementById('topics-results');
+
+            generateTopicsButton.addEventListener('click', async () => {
+                const interest = topicInput.value;
+                if (!interest) {
+                    topicsResults.innerHTML = `<p class="text-red-400">Por favor, escribe un interés.</p>`;
+                    return;
+                }
+
+                topicsResults.innerHTML = `<p class="text-neutral-400">Generando temas... <span class="animate-pulse">...</span></p>`;
+                const prompt = `Genera 5 ideas de temas de conversación para aprender un idioma, basándote en el siguiente interés: "${interest}". Las ideas deben ser creativas, específicas y adecuadas para una clase de idiomas. Formato: lista numerada.`;
+
+                const payload = {
+                    contents: [{ parts: [{ text: prompt }] }],
+                    generationConfig: {
+                        responseMimeType: "application/json",
+                        responseSchema: {
+                            type: "OBJECT",
+                            properties: {
+                                topics: {
+                                    type: "ARRAY",
+                                    items: { type: "STRING" }
+                                }
+                            }
+                        }
+                    }
+                };
+
+                const apiKey = ""; 
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+
+                try {
+                    const response = await fetchWithExponentialBackoff(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    const parsedJson = JSON.parse(response.candidates[0].content.parts[0].text);
+                    const topicsList = parsedJson.topics.map(topic => `<li><span class="text-indigo-400 font-bold mr-2">•</span>${topic}</li>`).join('');
+                    topicsResults.innerHTML = `<p class="font-bold text-lg mb-2">Aquí tienes algunas ideas:</p><ul class="list-none space-y-2">${topicsList}</ul>`;
+                } catch (error) {
+                    console.error('Error al generar temas:', error);
+                    topicsResults.innerHTML = `<p class="text-red-400">Error al generar temas. Inténtalo de nuevo más tarde.</p>`;
+                }
+            });
+
+            // --- Funcionalidad del analizador de pronunciación (Gemini API) ---
+            const micButton = document.getElementById('mic-button');
+            const phraseInput = document.getElementById('phrase-input');
+            const pronunciationResults = document.getElementById('pronunciation-results');
+            const micStatus = document.getElementById('mic-status');
+            let mediaRecorder;
+            let audioChunks = [];
+
+            // Solicitar permisos del micrófono
+            const startRecording = async () => {
+                try {
+                    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+                    mediaRecorder = new MediaRecorder(stream);
+                    audioChunks = [];
+                    mediaRecorder.ondataavailable = event => {
+                        audioChunks.push(event.data);
+                    };
+                    mediaRecorder.onstop = analyzePronunciation;
+                    mediaRecorder.start();
+                    micStatus.textContent = 'Grabando... ¡Habla ahora! (Presiona de nuevo para terminar)';
+                } catch (error) {
+                    console.error('Error al acceder al micrófono:', error);
+                    micStatus.textContent = 'Error: Por favor, habilita el micrófono.';
+                }
+            };
+
+            const stopRecording = () => {
+                if (mediaRecorder && mediaRecorder.state === 'recording') {
+                    mediaRecorder.stop();
+                    micStatus.textContent = 'Grabación finalizada. Analizando...';
+                }
+            };
+
+            micButton.addEventListener('click', () => {
+                if (mediaRecorder && mediaRecorder.state === 'recording') {
+                    stopRecording();
+                } else {
+                    startRecording();
+                }
+            });
+
+            async function analyzePronunciation() {
+                const phrase = phraseInput.value;
+                if (!phrase) {
+                    pronunciationResults.innerHTML = `<p class="text-red-400">Por favor, escribe una frase para analizar.</p>`;
+                    micStatus.textContent = 'Presiona el micrófono para grabar.';
+                    return;
+                }
+
+                pronunciationResults.innerHTML = `<p class="text-neutral-400">Analizando pronunciación... <span class="animate-pulse">...</span></p>`;
+                const audioBlob = new Blob(audioChunks, { type: 'audio/webm' });
+
+                // Convertir Blob a Base64 para la API
+                const reader = new FileReader();
+                reader.readAsDataURL(audioBlob);
+                reader.onloadend = async () => {
+                    const base64data = reader.result.split(',')[1];
+                    const prompt = `Analiza la pronunciación del audio y compárala con el texto de referencia: "${phrase}". Proporciona una retroalimentación detallada sobre la entonación, ritmo, y posibles errores, con un tono amable y constructivo.`;
+                    
+                    const payload = {
+                        contents: [{
+                            parts: [
+                                { text: prompt },
+                                {
+                                    inlineData: {
+                                        mimeType: "audio/webm",
+                                        data: base64data
+                                    }
+                                }
+                            ]
+                        }]
+                    };
+
+                    const apiKey = "";
+                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+
+                    try {
+                        const response = await fetchWithExponentialBackoff(apiUrl, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(payload)
+                        });
+                        const resultText = response.candidates[0].content.parts[0].text;
+                        pronunciationResults.innerHTML = `<p class="font-bold text-lg mb-2">Resultados del Análisis:</p><p class="text-neutral-300">${resultText}</p>`;
+                    } catch (error) {
+                        console.error('Error al analizar el audio:', error);
+                        pronunciationResults.innerHTML = `<p class="text-red-400">Error al analizar la pronunciación. Inténtalo de nuevo más tarde.</p>`;
+                    }
+                    micStatus.textContent = 'Análisis completado. Presiona el micrófono para una nueva grabación.';
+                };
+            }
+
+            // --- Funcionalidad del menú y tarjetas (original) ---
+            // Toggle del menú móvil
+            menuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Cierra el menú móvil al hacer clic en un enlace
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // Código para el efecto 3D de las tarjetas de precios
+            priceCards.forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left - rect.width / 2;
+                    const y = e.clientY - rect.top - rect.height / 2;
+                    const rotateX = (y / rect.height) * 10 * -1;
+                    const rotateY = (x / rect.width) * 10;
+                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+                });
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg)`;
+                });
+            });
+
+            // Manejo de formularios (simulado)
+            document.querySelectorAll('form').forEach(form => {
+                form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    console.log('Formulario enviado (simulado). ¡Gracias!');
+                    form.reset();
+                });
+            });
+        });
+    </script>
+</body>
+</html>
