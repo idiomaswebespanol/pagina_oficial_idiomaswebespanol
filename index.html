@@ -45,6 +45,11 @@
 </head>
 <body class="bg-neutral-950 text-neutral-200">
 
+    <!-- Script de Mailchimp para capturar correos -->
+    <script id="mcjs">
+        !function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/7056213c1a6b956f13803d27e/6ee79e31c362729861aec2374.js");
+    </script>
+
     <!-- Sección de Cabecera (Header) -->
     <header class="bg-neutral-950 shadow-sm sticky top-0 z-50">
         <nav class="container mx-auto px-4 py-4 flex flex-col md:flex-row md:justify-between items-center space-y-4 md:space-y-0">
@@ -128,7 +133,7 @@
                 <div class="relative overflow-hidden w-full h-0 pb-[56.25%] rounded-xl shadow-lg">
                     <iframe 
                         class="absolute top-0 left-0 w-full h-full" 
-                        src="https://www.youtube.com/@idiomasweb" 
+                        src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=yv71U2Q2yT_c6e91" 
                         title="YouTube video player" 
                         frameborder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -269,7 +274,7 @@
                 <p class="text-xl md:text-2xl mb-8 text-neutral-300" data-i18n="youtube-subtitle">
                     Explora temas de neurociencia, lingüística e investigaciones que te ayudarán a entender cómo aprende tu cerebro.
                 </p>
-                <a href="[Link a tu canal de YouTube]" target="_blank" class="inline-block bg-red-600 text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-red-700 transition duration-300 shadow-lg transform hover:scale-105" data-i18n="youtube-cta">
+                <a href="https://youtube.com/@idiomasweb?si=9xqpc78PFDRlNW5g" target="_blank" class="inline-block bg-red-600 text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-red-700 transition duration-300 shadow-lg transform hover:scale-105" data-i18n="youtube-cta">
                     Ir a mi canal de YouTube
                 </a>
             </div>
@@ -861,56 +866,7 @@
                 const offset = -testimonialIndex * 100;
                 testimonialContainer.style.transform = `translateX(${offset}%)`;
             }, 5000); // Cambia el testimonio cada 5 segundos
-
-            // Manejo de formularios de Ebooks (envío a Google Forms)
-            document.querySelectorAll('.ebook-form').forEach(form => {
-                form.addEventListener('submit', async (e) => {
-                    e.preventDefault();
-                    const email = form.querySelector('input[type="email"]').value;
-                    const ebookMessage = form.querySelector('.ebook-message');
-                    const lang = document.querySelector('.lang-button.active').dataset.lang;
-                    const ebookTitle = form.dataset.ebookTitle;
-                    const ebookLink = form.dataset.ebookLink;
-                    
-                    if (!email) {
-                        ebookMessage.textContent = translations[lang]["email-validation"];
-                        ebookMessage.classList.add('text-red-400');
-                        return;
-                    }
-
-                    // Datos para enviar al formulario de Google Forms
-                    const formData = new FormData();
-                    formData.append('entry.123456789', email); // Reemplaza '123456789' con el ID real de tu campo de email
-                    formData.append('entry.987654321', ebookTitle); // Reemplaza '987654321' con el ID del campo del título del ebook
-
-                    // URL de tu Google Forms para el endpoint
-                    const googleFormsEndpoint = 'https://docs.google.com/forms/d/e/YOUR_GOOGLE_FORM_ID/formResponse'; // REEMPLAZA ESTO
-
-                    try {
-                        const response = await fetch(googleFormsEndpoint, {
-                            method: 'POST',
-                            mode: 'no-cors', // Importante para evitar errores CORS
-                            body: formData
-                        });
-
-                        // El "no-cors" no permite verificar si la respuesta fue exitosa,
-                        // por lo que asumimos que lo fue y procedemos.
-                        ebookMessage.textContent = translations[lang]["download-confirmation"];
-                        ebookMessage.classList.add('text-green-400');
-                        ebookMessage.classList.remove('text-red-400');
-                        form.reset();
-
-                        // Opcional: Redirigir al usuario al link de descarga
-                        // window.open(ebookLink, '_blank');
-                    } catch (error) {
-                        console.error('Error al enviar el formulario a Google Forms:', error);
-                        ebookMessage.textContent = "Hubo un error. Por favor, inténtalo de nuevo.";
-                        ebookMessage.classList.add('text-red-400');
-                        ebookMessage.classList.remove('text-green-400');
-                    }
-                });
-            });
-
+            
             // Manejo del formulario de contacto general
             document.getElementById('contact-form').addEventListener('submit', (e) => {
                 e.preventDefault();
