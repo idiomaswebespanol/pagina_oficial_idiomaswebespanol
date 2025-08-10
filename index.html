@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tu Método de Idiomas</title>
+    <title>Tu Método de Idiomas - IdiomasWeb</title>
     <!-- Incluye el CDN de Tailwind CSS para un diseño moderno y responsive -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Fuente Inter de Google Fonts -->
@@ -11,7 +11,7 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0c0a09; /* Fondo oscuro */
+            background-color: #f4f4f5; /* Fondo claro */
         }
         /* Estilos para el menú de hamburguesa */
         #mobile-menu.hidden {
@@ -36,22 +36,20 @@
             color: #ffffff;
         }
         /* Estilos para carrusel de testimonios */
-        .testimonial-card {
-            min-width: 100%;
+        .testimonial-container {
+            display: flex;
             transition: transform 0.5s ease-in-out;
         }
+        .testimonial-card {
+            min-width: 100%;
+        }
     </style>
-<script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/7056213c1a6b956f13803d27e/df17e5c6b9f79624705e77b6e.js");</script>
 </head>
-<body class="bg-neutral-950 text-neutral-200">
-
-    <!-- Script de Mailchimp para capturar correos -->
-    <script id="mcjs">
-        !function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/7056213c1a6b956f13803d27e/df17e5c6b9f79624705e77b6e.js");
-    </script>
+<body class="bg-neutral-100 text-neutral-800">
 
     <!-- Sección de Cabecera (Header) -->
-    <header class="bg-neutral-950 shadow-sm sticky top-0 z-50">
+    <!-- Menú de navegación principal que se mantiene fijo en la parte superior -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
         <nav class="container mx-auto px-4 py-4 flex flex-col md:flex-row md:justify-between items-center space-y-4 md:space-y-0">
             <!-- Logo y Selector de Idiomas -->
             <div class="flex items-center space-x-6 w-full md:w-auto justify-between md:justify-start">
@@ -61,15 +59,15 @@
             
                 <!-- Selector de Idiomas (Centrado en móvil y a la izquierda en desktop) -->
                 <div class="flex items-center space-x-2 md:order-last">
-                    <button class="lang-button text-sm text-neutral-400 hover:text-white" data-lang="es">ES</button>
-                    <button class="lang-button text-sm text-neutral-400 hover:text-white" data-lang="en">EN</button>
-                    <button class="lang-button text-sm text-neutral-400 hover:text-white" data-lang="fr">FR</button>
-                    <button class="lang-button text-sm text-neutral-400 hover:text-white" data-lang="pt">PT</button>
+                    <button class="lang-button text-sm text-neutral-600 hover:text-neutral-900" data-lang="es">ES</button>
+                    <button class="lang-button text-sm text-neutral-600 hover:text-neutral-900" data-lang="en">EN</button>
+                    <button class="lang-button text-sm text-neutral-600 hover:text-neutral-900" data-lang="fr">FR</button>
+                    <button class="lang-button text-sm text-neutral-600 hover:text-neutral-900" data-lang="pt">PT</button>
                 </div>
 
                 <!-- Botón de Menú para Móvil (Hamburguesa) -->
                 <div class="md:hidden">
-                    <button id="menu-button" class="text-neutral-400 hover:text-white focus:outline-none">
+                    <button id="menu-button" class="text-neutral-600 hover:text-neutral-900 focus:outline-none">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
                         </svg>
@@ -79,43 +77,43 @@
 
             <!-- Menú de Navegación para Desktop -->
             <ul class="hidden md:flex space-x-6 items-center">
-                <li><a href="#inicio" class="text-neutral-400 hover:text-white font-medium transition duration-300" data-i18n="nav-inicio">Inicio</a></li>
-                <li><a href="#sobre-mi" class="text-neutral-400 hover:text-white font-medium transition duration-300" data-i18n="nav-sobre-mi">Sobre Mí</a></li>
-                <li><a href="#metodo" class="text-neutral-400 hover:text-white font-medium transition duration-300" data-i18n="nav-el-metodo">El Método</a></li>
-                <li><a href="#comunidades" class="text-neutral-400 hover:text-white font-medium transition duration-300" data-i18n="nav-comunidades">Comunidades</a></li>
-                <li><a href="#youtube" class="text-neutral-400 hover:text-white font-medium transition duration-300" data-i18n="nav-youtube">YouTube</a></li>
-                <li><a href="#precios" class="text-neutral-400 hover:text-white font-medium transition duration-300" data-i18n="nav-precios">Precios</a></li>
-                <li><a href="#ebooks" class="text-neutral-400 hover:text-white font-medium transition duration-300" data-i18n="nav-ebooks">Ebooks</a></li>
-                <li><a href="#faq" class="text-neutral-400 hover:text-white font-medium transition duration-300" data-i18n="nav-faq">FAQ</a></li>
-                <li><a href="#contacto" class="text-neutral-400 hover:text-white font-medium transition duration-300" data-i18n="nav-contacto">Contacto</a></li>
+                <li><a href="#inicio" class="text-neutral-600 hover:text-neutral-900 font-medium transition duration-300" data-i18n="nav-inicio">Inicio</a></li>
+                <li><a href="#sobre-mi" class="text-neutral-600 hover:text-neutral-900 font-medium transition duration-300" data-i18n="nav-sobre-mi">Sobre Mí</a></li>
+                <li><a href="#metodo" class="text-neutral-600 hover:text-neutral-900 font-medium transition duration-300" data-i18n="nav-el-metodo">El Método</a></li>
+                <li><a href="#comunidades" class="text-neutral-600 hover:text-neutral-900 font-medium transition duration-300" data-i18n="nav-comunidades">Comunidades</a></li>
+                <li><a href="#youtube" class="text-neutral-600 hover:text-neutral-900 font-medium transition duration-300" data-i18n="nav-youtube">YouTube</a></li>
+                <li><a href="#precios" class="text-neutral-600 hover:text-neutral-900 font-medium transition duration-300" data-i18n="nav-precios">Precios</a></li>
+                <li><a href="#ebooks" class="text-neutral-600 hover:text-neutral-900 font-medium transition duration-300" data-i18n="nav-ebooks">Ebooks</a></li>
+                <li><a href="#faq" class="text-neutral-600 hover:text-neutral-900 font-medium transition duration-300" data-i18n="nav-faq">FAQ</a></li>
+                <li><a href="#contacto" class="text-neutral-600 hover:text-neutral-900 font-medium transition duration-300" data-i18n="nav-contacto">Contacto</a></li>
             </ul>
         </nav>
     </header>
 
     <!-- Menú Desplegable para Móvil -->
-    <div id="mobile-menu" class="hidden md:hidden bg-neutral-900 shadow-md">
+    <div id="mobile-menu" class="hidden md:hidden bg-neutral-200 shadow-md">
         <ul class="flex flex-col items-center py-4 space-y-4">
-            <li><a href="#inicio" class="block w-full text-center text-neutral-400 hover:bg-neutral-800 py-2" data-i18n="nav-inicio">Inicio</a></li>
-            <li><a href="#sobre-mi" class="block w-full text-center text-neutral-400 hover:bg-neutral-800 py-2" data-i18n="nav-sobre-mi">Sobre Mí</a></li>
-            <li><a href="#metodo" class="block w-full text-center text-neutral-400 hover:bg-neutral-800 py-2" data-i18n="nav-el-metodo">El Método</a></li>
-            <li><a href="#comunidades" class="block w-full text-center text-neutral-400 hover:bg-neutral-800 py-2" data-i18n="nav-comunidades">Comunidades</a></li>
-            <li><a href="#youtube" class="block w-full text-center text-neutral-400 hover:bg-neutral-800 py-2" data-i18n="nav-youtube">YouTube</a></li>
-            <li><a href="#precios" class="block w-full text-center text-neutral-400 hover:bg-neutral-800 py-2" data-i18n="nav-precios">Precios</a></li>
-            <li><a href="#ebooks" class="block w-full text-center text-neutral-400 hover:bg-neutral-800 py-2" data-i18n="nav-ebooks">Ebooks</a></li>
-            <li><a href="#faq" class="block w-full text-center text-neutral-400 hover:bg-neutral-800 py-2" data-i18n="nav-faq">FAQ</a></li>
-            <li><a href="#contacto" class="block w-full text-center text-neutral-400 hover:bg-neutral-800 py-2" data-i18n="nav-contacto">Contacto</a></li>
+            <li><a href="#inicio" class="block w-full text-center text-neutral-600 hover:bg-neutral-300 py-2" data-i18n="nav-inicio">Inicio</a></li>
+            <li><a href="#sobre-mi" class="block w-full text-center text-neutral-600 hover:bg-neutral-300 py-2" data-i18n="nav-sobre-mi">Sobre Mí</a></li>
+            <li><a href="#metodo" class="block w-full text-center text-neutral-600 hover:bg-neutral-300 py-2" data-i18n="nav-el-metodo">El Método</a></li>
+            <li><a href="#comunidades" class="block w-full text-center text-neutral-600 hover:bg-neutral-300 py-2" data-i18n="nav-comunidades">Comunidades</a></li>
+            <li><a href="#youtube" class="block w-full text-center text-neutral-600 hover:bg-neutral-300 py-2" data-i18n="nav-youtube">YouTube</a></li>
+            <li><a href="#precios" class="block w-full text-center text-neutral-600 hover:bg-neutral-300 py-2" data-i18n="nav-precios">Precios</a></li>
+            <li><a href="#ebooks" class="block w-full text-center text-neutral-600 hover:bg-neutral-300 py-2" data-i18n="nav-ebooks">Ebooks</a></li>
+            <li><a href="#faq" class="block w-full text-center text-neutral-600 hover:bg-neutral-300 py-2" data-i18n="nav-faq">FAQ</a></li>
+            <li><a href="#contacto" class="block w-full text-center text-neutral-600 hover:bg-neutral-300 py-2" data-i18n="nav-contacto">Contacto</a></li>
         </ul>
     </div>
 
     <!-- Contenido Principal -->
     <main>
         <!-- Sección de Héroe (Hero) -->
-        <section id="inicio" class="bg-neutral-950 py-20 md:py-32 text-center">
+        <section id="inicio" class="bg-white py-20 md:py-32 text-center">
             <div class="container mx-auto px-4">
-                <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4" data-i18n="hero-title">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-neutral-900 leading-tight mb-4" data-i18n="hero-title">
                     Deja de estudiar. Empieza a hablar.
                 </h1>
-                <p class="text-xl md:text-2xl text-neutral-400 mb-8 max-w-3xl mx-auto" data-i18n="hero-subtitle">
+                <p class="text-xl md:text-2xl text-neutral-600 mb-8 max-w-3xl mx-auto" data-i18n="hero-subtitle">
                     ¿Por qué aprender con libros aburridos si puedes aprender con lo que te apasiona? Mi método de enseñanza se basa en <strong class="highlight-text">tus</strong> intereses, no en un currículo rígido.
                 </p>
                 <a href="#contacto" class="bg-indigo-600 text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-indigo-700 transition duration-300 shadow-lg transform hover:scale-105" data-i18n="hero-cta">
@@ -124,8 +122,8 @@
             </div>
         </section>
 
-        <!-- Nueva Sección para el video de YouTube -->
-        <section class="py-16 md:py-24 bg-neutral-900 text-white">
+        <!-- Sección de video de YouTube -->
+        <section class="py-16 md:py-24 bg-neutral-200 text-neutral-900">
             <div class="container mx-auto px-4 text-center max-w-4xl">
                 <h2 class="text-3xl md:text-4xl font-bold mb-8" data-i18n="video-title">
                     Descubre mi método en este video
@@ -144,9 +142,9 @@
         </section>
 
         <!-- Sección "Las Claves de Mi Método" -->
-        <section class="py-16 md:py-24 bg-neutral-950">
-            <div class="relative bg-neutral-950 py-20">
-                <h2 class="text-2xl px-4 md:text-4xl lg:text-5xl font-bold text-white max-w-4xl leading-relaxed lg:leading-snug text-center mx-auto" data-i18n="keys-intro">
+        <section class="py-16 md:py-24 bg-white">
+            <div class="relative bg-white py-20">
+                <h2 class="text-2xl px-4 md:text-4xl lg:text-5xl font-bold text-neutral-900 max-w-4xl leading-relaxed lg:leading-snug text-center mx-auto" data-i18n="keys-intro">
                     ¿Te imaginas que la clave para hablar con fluidez no fuera memorizar, sino
                     <span class="bg-gradient-to-r from-yellow-300 to-green-400 text-transparent bg-clip-text font-bold px-2 rounded-lg" data-i18n="keys-highlight">
                         tener una conversación real?
@@ -156,122 +154,129 @@
         </section>
 
         <!-- Sección "Sobre Mí" ampliada -->
-        <section id="sobre-mi" class="py-16 md:py-24 bg-neutral-900">
+        <section id="sobre-mi" class="py-16 md:py-24 bg-neutral-200">
             <div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
                 <div class="md:w-1/2">
-                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4" data-i18n="about-title">
+                    <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-4" data-i18n="about-title">
                         Un enfoque diferente, un resultado real.
                     </h2>
-                    <p class="text-lg text-neutral-400 mb-4" data-i18n="about-intro">
-                        Hola, soy <strong class="text-indigo-400">Jonathan</strong>, profesor de idiomas con un enfoque único.
+                    <p class="text-lg text-neutral-600 mb-4" data-i18n="about-intro">
+                        Hola, soy <strong class="text-indigo-600">Jonathan</strong>, profesor de idiomas con un enfoque único.
                     </p>
-                    <p class="text-lg text-neutral-400 mb-4" data-i18n="about-text-1">
-                        Tras años de enseñanza, me di cuenta de que el método tradicional no funcionaba para todos. Vi a muchos alumnos perder la motivación con libros que no les hablaban, y entendí que la verdadera fluidez no viene de la gramática, sino del <strong class="text-indigo-400">interés</strong>.
+                    <p class="text-lg text-neutral-600 mb-4" data-i18n="about-text-1">
+                        Tras años de enseñanza, me di cuenta de que el método tradicional no funcionaba para todos. Vi a muchos alumnos perder la motivación con libros que no les hablaban, y entendí que la verdadera fluidez no viene de la gramática, sino del <strong class="text-indigo-600">interés</strong>.
                     </p>
-                    <p class="text-lg text-neutral-400 mb-4" data-i18n="about-text-2">
+                    <p class="text-lg text-neutral-600 mb-4" data-i18n="about-text-2">
                         Mi misión es simple: ayudarte a comunicarte de forma auténtica sobre lo que te mueve. Por eso, mis clases son un espacio donde tus pasiones, tus proyectos y tus sueños son el centro de todo.
                     </p>
-                    <p class="text-lg text-neutral-400" data-i18n="about-text-3">
+                    <p class="text-lg text-neutral-600" data-i18n="about-text-3">
                         Mis especializaciones incluyen la neurociencia del aprendizaje y la lingüística, lo que me permite diseñar planes de estudio no solo efectivos, sino científicamente respaldados para que logres tus objetivos de manera más eficiente.
                     </p>
                 </div>
                 <div class="md:w-1/2 flex justify-center">
-                    <img src="https://placehold.co/400x400/171717/9ca3af?text=Tu+Foto" alt="Foto de [Tu Nombre]" class="rounded-full shadow-lg border-4 border-indigo-400" />
+                    <img src="https://placehold.co/400x400/e5e5e5/171717?text=Jonathan" alt="Foto de Jonathan" class="rounded-full shadow-lg border-4 border-indigo-600" />
                 </div>
             </div>
         </section>
 
         <!-- Sección "El Método" -->
-        <section id="metodo" class="py-16 md:py-24 bg-neutral-950 text-white">
+        <section id="metodo" class="py-16 md:py-24 bg-white text-neutral-900">
             <div class="container mx-auto px-4 text-center">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="method-title">
                     Mi Método: Conversación con propósito
                 </h2>
-                <p class="text-xl md:text-2xl mb-12 max-w-4xl mx-auto text-neutral-300" data-i18n="method-subtitle">
+                <p class="text-xl md:text-2xl mb-12 max-w-4xl mx-auto text-neutral-600" data-i18n="method-subtitle">
                     El centro de mis clases eres <strong class="underline">tú</strong>. En lugar de seguir un libro, nos sumergimos por completo en los temas que te motivan.
                 </p>
                 <div class="grid md:grid-cols-3 gap-8">
-                    <div class="p-6 bg-neutral-800 rounded-lg shadow-md backdrop-blur-sm">
+                    <div class="p-6 bg-neutral-200 rounded-lg shadow-md backdrop-blur-sm">
                         <h3 class="text-2xl font-bold mb-2" data-i18n="method-1-title">Tú eliges el terreno</h3>
-                        <p class="text-neutral-400" data-i18n="method-1-text">Tu hobby, tu profesión, tu película favorita... <strong class="font-bold">Tú</strong> me das tu fuente de interés, y yo me encargo del resto.</p>
+                        <p class="text-neutral-600" data-i18n="method-1-text">Tu hobby, tu profesión, tu película favorita... <strong class="font-bold">Tú</strong> me das tu fuente de interés, y yo me encargo del resto.</p>
                     </div>
-                    <div class="p-6 bg-neutral-800 rounded-lg shadow-md backdrop-blur-sm">
+                    <div class="p-6 bg-neutral-200 rounded-lg shadow-md backdrop-blur-sm">
                         <h3 class="text-2xl font-bold mb-2" data-i18n="method-2-title">Aprendizaje útil</h3>
-                        <p class="text-neutral-400" data-i18n="method-2-text">La meta es que cada palabra y frase que aprendamos tenga una aplicación inmediata. ¿Necesitas preparar una presentación? Haremos exactamente eso.</p>
+                        <p class="text-neutral-600" data-i18n="method-2-text">La meta es que cada palabra y frase que aprendamos tenga una aplicación inmediata. ¿Necesitas preparar una presentación? Haremos exactamente eso.</p>
                     </div>
-                    <div class="p-6 bg-neutral-800 rounded-lg shadow-md backdrop-blur-sm">
+                    <div class="p-6 bg-neutral-200 rounded-lg shadow-md backdrop-blur-sm">
                         <h3 class="text-2xl font-bold mb-2" data-i18n="method-3-title">Motivación en cada clase</h3>
-                        <p class="text-neutral-400" data-i18n="method-3-text">No hay nada más efectivo que aprender algo que realmente te interesa. La fluidez llega de forma natural cuando disfrutas el proceso.</p>
+                        <p class="text-neutral-600" data-i18n="method-3-text">No hay nada más efectivo que aprender algo que realmente te interesa. La fluidez llega de forma natural cuando disfrutas el proceso.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Sección de Testimonios (carrusel) -->
-        <section class="py-16 md:py-24 bg-neutral-900 text-white">
+        <section class="py-16 md:py-24 bg-neutral-200 text-neutral-900">
             <div class="container mx-auto px-4 text-center max-w-3xl">
                 <h2 class="text-3xl md:text-4xl font-bold mb-12" data-i18n="testimonials-title">
                     Lo que mis alumnos dicen
                 </h2>
                 <div id="testimonial-carousel" class="relative overflow-hidden">
-                    <div class="flex transition-transform duration-500 ease-in-out" id="testimonial-container">
+                    <div class="testimonial-container" id="testimonial-container">
                         <!-- Testimonio 1 -->
-                        <div class="testimonial-card p-6 rounded-xl shadow-lg border-2 border-neutral-700 bg-neutral-800">
-                            <p class="text-lg mb-4 italic text-neutral-300" data-i18n="testimonial-1-text">
+                        <div class="testimonial-card p-6 rounded-xl shadow-lg border-2 border-neutral-300 bg-white">
+                            <p class="text-lg mb-4 italic text-neutral-600" data-i18n="testimonial-1-text">
                                 "Por fin un método que me hace querer seguir aprendiendo. Cada clase es como una charla con un amigo, pero en otro idioma. ¡Totalmente recomendable!"
                             </p>
-                            <p class="font-bold text-white" data-i18n="testimonial-1-author">
+                            <p class="font-bold text-neutral-900" data-i18n="testimonial-1-author">
                                 - Carlos R.
                             </p>
                         </div>
                         <!-- Testimonio 2 -->
-                        <div class="testimonial-card p-6 rounded-xl shadow-lg border-2 border-neutral-700 bg-neutral-800">
-                            <p class="text-lg mb-4 italic text-neutral-300" data-i18n="testimonial-2-text">
+                        <div class="testimonial-card p-6 rounded-xl shadow-lg border-2 border-neutral-300 bg-white">
+                            <p class="text-lg mb-4 italic text-neutral-600" data-i18n="testimonial-2-text">
                                 "Necesitaba hablar de mi trabajo en reuniones y este método me dio exactamente el vocabulario y la confianza para hacerlo. ¡Increíble!"
                             </p>
-                            <p class="font-bold text-white" data-i18n="testimonial-2-author">
+                            <p class="font-bold text-neutral-900" data-i18n="testimonial-2-author">
                                 - Ana G.
                             </p>
                         </div>
                         <!-- Testimonio 3 -->
-                        <div class="testimonial-card p-6 rounded-xl shadow-lg border-2 border-neutral-700 bg-neutral-800">
-                            <p class="text-lg mb-4 italic text-neutral-300" data-i18n="testimonial-3-text">
+                        <div class="testimonial-card p-6 rounded-xl shadow-lg border-2 border-neutral-300 bg-white">
+                            <p class="text-lg mb-4 italic text-neutral-600" data-i18n="testimonial-3-text">
                                 "Mi pasión es el cine, y en mis clases, hablamos de mis películas favoritas. Es increíble cómo mi vocabulario creció sin sentir que estaba 'estudiando'."
                             </p>
-                            <p class="font-bold text-white" data-i18n="testimonial-3-author">
+                            <p class="font-bold text-neutral-900" data-i18n="testimonial-3-author">
                                 - Juan P.
                             </p>
                         </div>
                     </div>
+                    <!-- Botones de navegación para el carrusel -->
+                    <button id="prev-testimonial" class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-neutral-300 text-neutral-800 p-2 rounded-full opacity-50 hover:opacity-100 transition">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                    </button>
+                    <button id="next-testimonial" class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-neutral-300 text-neutral-800 p-2 rounded-full opacity-50 hover:opacity-100 transition">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
                 </div>
             </div>
         </section>
 
 
         <!-- Sección de Comunidades -->
-        <section id="comunidades" class="py-16 md:py-24 bg-neutral-950">
+        <section id="comunidades" class="py-16 md:py-24 bg-white">
             <div class="container mx-auto px-4 text-center">
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-12" data-i18n="communities-title">Únete a mis comunidades en WhatsApp</h2>
+                <h2 class="text-3xl md:text-4xl font-bold text-emerald-500 mb-12" data-i18n="communities-title">Únete a mis comunidades en WhatsApp</h2>
                 <div class="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto">
-                    <a href="https://chat.whatsapp.com/JRUxZaBOt7nAxNRfe7b4TH?mode=ac_t"_blank" class="block bg-neutral-800 p-8 rounded-xl shadow-lg border-2 border-neutral-700 hover:border-indigo-600 transition-all duration-300 transform hover:-translate-y-2">
-                        <h3 class="text-2xl font-bold text-white mb-2" data-i18n="community-1-title">Nivel A1 - B1</h3>
-                        <p class="text-neutral-400" data-i18n="community-1-text">Para principiantes e intermedios. Practica y comparte tus avances.</p>
+                    <a href="https://chat.whatsapp.com/JRUxZaBOt7nAxNRfe7b4TH" target="_blank" class="block bg-neutral-200 p-8 rounded-xl shadow-lg border-2 border-emerald-500 hover:border-indigo-600 transition-all duration-300 transform hover:-translate-y-2">
+                        <h3 class="text-2xl font-bold text-neutral-900 mb-2" data-i18n="community-1-title">Nivel A1 - B1</h3>
+                        <p class="text-neutral-600" data-i18n="community-1-text">Para principiantes e intermedios. Practica y comparte tus avances.</p>
                     </a>
-                    <a href="https://chat.whatsapp.com/GD1PhK4j46q4jparNojhlf?mode=ac_t" target="_blank" class="block bg-neutral-800 p-8 rounded-xl shadow-lg border-2 border-neutral-700 hover:border-indigo-600 transition-all duration-300 transform hover:-translate-y-2">
-                        <h3 class="text-2xl font-bold text-white mb-2" data-i18n="community-2-title">Nivel B1 - C1</h3>
-                        <p class="text-neutral-400" data-i18n="community-2-text">Para estudiantes avanzados. Conversaciones profundas y fluidez.</p>
+                    <a href="https://chat.whatsapp.com/GD1PhK4j46q4jparNojhlf" target="_blank" class="block bg-neutral-200 p-8 rounded-xl shadow-lg border-2 border-emerald-500 hover:border-indigo-600 transition-all duration-300 transform hover:-translate-y-2">
+                        <h3 class="text-2xl font-bold text-neutral-900 mb-2" data-i18n="community-2-title">Nivel B1 - C1</h3>
+                        <p class="text-neutral-600" data-i18n="community-2-text">Para estudiantes avanzados. Conversaciones profundas y fluidez.</p>
                     </a>
                 </div>
             </div>
         </section>
         
         <!-- Sección de YouTube (link) -->
-        <section id="youtube" class="py-16 md:py-24 bg-neutral-900">
+        <section id="youtube" class="py-16 md:py-24 bg-neutral-200">
             <div class="container mx-auto px-4 text-center max-w-4xl">
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4" data-i18n="youtube-title">
+                <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-4" data-i18n="youtube-title">
                     Refuerza tu aprendizaje con mis videos en YouTube.
                 </h2>
-                <p class="text-xl md:text-2xl mb-8 text-neutral-300" data-i18n="youtube-subtitle">
+                <p class="text-xl md:text-2xl mb-8 text-neutral-600" data-i18n="youtube-subtitle">
                     Explora temas de neurociencia, lingüística e investigaciones que te ayudarán a entender cómo aprende tu cerebro.
                 </p>
                 <a href="https://youtube.com/@idiomasweb?si=9xqpc78PFDRlNW5g" target="_blank" class="inline-block bg-red-600 text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-red-700 transition duration-300 shadow-lg transform hover:scale-105" data-i18n="youtube-cta">
@@ -281,71 +286,89 @@
         </section>
 
         <!-- Sección de Precios y Servicios -->
-        <section id="precios" class="py-16 md:py-24 bg-neutral-950">
+        <section id="precios" class="py-16 md:py-24 bg-white">
             <div class="container mx-auto px-4 text-center">
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-12" data-i18n="pricing-title">
+                <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-12" data-i18n="pricing-title">
                     Invierte en una conversación que realmente te sirva.
                 </h2>
                 <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                     <!-- Tarjeta de Precios 1 -->
-                    <div class="p-8 rounded-xl shadow-lg border-2 bg-neutral-900 border-neutral-700 hover:border-indigo-600 text-neutral-300 transition-all duration-300 transform hover:-translate-y-2">
-                        <h3 class="text-2xl font-bold text-white mb-4" data-i18n="price-1-title">Clase individual</h3>
-                        <p class="text-4xl font-extrabold text-indigo-400 mb-6">[Precio]</p>
+                    <div class="price-card p-8 rounded-xl shadow-lg border-2 bg-neutral-100 border-neutral-300 hover:border-indigo-600 text-neutral-600 transition-all duration-300 transform hover:-translate-y-2">
+                        <h3 class="text-2xl font-bold text-neutral-900 mb-4" data-i18n="price-1-title">Clase individual</h3>
+                        <p class="text-4xl font-extrabold text-indigo-600 mb-6">$20</p>
                         <p class="text-lg mb-6" data-i18n="price-1-text">Ideal para probar el método, resolver dudas o enfocarse en un tema concreto.</p>
-                        <ul class="text-left text-neutral-400 space-y-2 mb-8">
-                            <li class="flex items-center"><svg class="w-5 h-5 text-indigo-400 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg><span data-i18n="price-1-feature-1">Plan de estudio personalizado.</span></li>
-                            <li class="flex items-center"><svg class="w-5 h-5 text-indigo-400 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg><span data-i18n="price-1-feature-2">1 hora de conversación enfocada.</span></li>
+                        <ul class="text-left text-neutral-600 space-y-2 mb-8">
+                            <li class="flex items-center"><svg class="w-5 h-5 text-indigo-600 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg><span data-i18n="price-1-feature-1">Plan de estudio personalizado.</span></li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-indigo-600 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg><span data-i18n="price-1-feature-2">1 hora de conversación enfocada.</span></li>
                         </ul>
-                        <a href="#contacto" class="block bg-indigo-600 text-white font-bold py-3 px-8 rounded-full hover:bg-indigo-700 transition duration-300" data-i18n="cta-choose-plan">Elegir plan</a>
+                        <!-- Botón de PayPal 20$ -->
+                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                            <input type="hidden" name="cmd" value="_s-xclick" />
+                            <input type="hidden" name="hosted_button_id" value="PDGVTF558TNS8" />
+                            <input type="hidden" name="currency_code" value="USD" />
+                            <input type="image" src="https://www.paypalobjects.com/es_XC/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" title="O PayPal é a forma fácil e segura de pagar suas compras on-line." alt="Comprar agora" class="mx-auto" />
+                        </form>
                     </div>
                     <!-- Tarjeta de Precios 2 -->
-                    <div class="p-8 rounded-xl shadow-lg border-2 bg-neutral-900 border-neutral-700 hover:border-indigo-600 text-neutral-300 transition-all duration-300 transform hover:-translate-y-2">
-                        <h3 class="text-2xl font-bold text-white mb-4" data-i18n="price-2-title">Paquete de 5 clases</h3>
-                        <p class="text-4xl font-extrabold text-indigo-400 mb-6">[Precio]</p>
+                    <div class="price-card p-8 rounded-xl shadow-lg border-2 bg-neutral-100 border-neutral-300 hover:border-indigo-600 text-neutral-600 transition-all duration-300 transform hover:-translate-y-2">
+                        <h3 class="text-2xl font-bold text-neutral-900 mb-4" data-i18n="price-2-title">Paquete de 5 clases</h3>
+                        <p class="text-4xl font-extrabold text-indigo-600 mb-6">$80</p>
                         <p class="text-lg mb-6" data-i18n="price-2-text">Perfecto para un progreso constante y comprometido con tu aprendizaje.</p>
-                        <ul class="text-left text-neutral-400 space-y-2 mb-8">
-                            <li class="flex items-center"><svg class="w-5 h-5 text-indigo-400 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg><span data-i18n="price-2-feature-1">Plan de estudio personalizado.</span></li>
-                            <li class="flex items-center"><svg class="w-5 h-5 text-indigo-400 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg><span data-i18n="price-2-feature-2">Seguimiento de progreso.</span></li>
+                        <ul class="text-left text-neutral-600 space-y-2 mb-8">
+                            <li class="flex items-center"><svg class="w-5 h-5 text-indigo-600 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg><span data-i18n="price-2-feature-1">Plan de estudio personalizado.</span></li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-indigo-600 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg><span data-i18n="price-2-feature-2">Seguimiento de progreso.</span></li>
                         </ul>
-                        <a href="#contacto" class="block bg-indigo-600 text-white font-bold py-3 px-8 rounded-full hover:bg-indigo-700 transition duration-300" data-i18n="cta-choose-plan">Elegir plan</a>
+                        <!-- Botón de PayPal 80$ -->
+                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                            <input type="hidden" name="cmd" value="_s-xclick" />
+                            <input type="hidden" name="hosted_button_id" value="2B2QANC6XP7YE" />
+                            <input type="hidden" name="currency_code" value="USD" />
+                            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" title="O PayPal é a forma fácil e segura de pagar suas compras on-line." alt="Comprar agora" class="mx-auto" />
+                        </form>
                     </div>
                     <!-- Tarjeta de Precios 3 -->
-                    <div class="p-8 rounded-xl shadow-lg border-2 bg-neutral-900 border-indigo-600 text-neutral-100 transform -translate-y-2 relative">
-                        <h3 class="text-2xl font-bold text-white mb-4" data-i18n="price-3-title">Paquete de 10 clases</h3>
-                        <p class="text-4xl font-extrabold text-indigo-400 mb-6">[Precio]</p>
+                    <div class="price-card p-8 rounded-xl shadow-lg border-2 bg-neutral-100 border-indigo-600 text-neutral-900 transform -translate-y-2 relative">
+                        <h3 class="text-2xl font-bold text-neutral-900 mb-4" data-i18n="price-3-title">Paquete de 8 clases</h3>
+                        <p class="text-4xl font-extrabold text-indigo-600 mb-6">$150</p>
                         <p class="text-lg mb-6" data-i18n="price-3-text">La mejor opción para un progreso notable, consistente y duradero.</p>
-                        <ul class="text-left text-neutral-400 space-y-2 mb-8">
-                            <li class="flex items-center"><svg class="w-5 h-5 text-indigo-400 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg><span data-i18n="price-3-feature-1">Todo lo anterior incluido.</span></li>
-                            <li class="flex items-center"><svg class="w-5 h-5 text-indigo-400 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg><span data-i18n="price-3-feature-2">Recursos y materiales exclusivos.</span></li>
+                        <ul class="text-left text-neutral-600 space-y-2 mb-8">
+                            <li class="flex items-center"><svg class="w-5 h-5 text-indigo-600 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg><span data-i18n="price-3-feature-1">Todo lo anterior incluido.</span></li>
+                            <li class="flex items-center"><svg class="w-5 h-5 text-indigo-600 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg><span data-i18n="price-3-feature-2">Recursos y materiales exclusivos.</span></li>
                         </ul>
-                        <div class="absolute top-0 right-0 mt-4 mr-4 text-sm font-bold text-green-400 bg-green-900 px-3 py-1 rounded-full" data-i18n="popular-tag">
+                        <div class="absolute top-0 right-0 mt-4 mr-4 text-sm font-bold text-green-700 bg-green-200 px-3 py-1 rounded-full" data-i18n="popular-tag">
                             ¡La más popular!
                         </div>
-                        <a href="#contacto" class="block bg-indigo-600 text-white font-bold py-3 px-8 rounded-full hover:bg-indigo-700 transition duration-300" data-i18n="cta-choose-plan">Elegir plan</a>
+                        <!-- Botón de PayPal 150$ -->
+                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                            <input type="hidden" name="cmd" value="_s-xclick" />
+                            <input type="hidden" name="hosted_button_id" value="6WWELSBD9AB2S" />
+                            <input type="hidden" name="currency_code" value="USD" />
+                            <input type="image" src="https://www.paypalobjects.com/es_XC/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" title="O PayPal é a forma fácil e segura de pagar suas compras on-line." alt="Comprar agora" class="mx-auto" />
+                        </form>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Sección de Ebooks (con botón de activación de Mailchimp) -->
-        <section id="ebooks" class="py-16 md:py-24 bg-neutral-900">
+        <section id="ebooks" class="py-16 md:py-24 bg-neutral-200">
             <div class="container mx-auto px-4 text-center">
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-12" data-i18n="ebooks-title">Mis Ebooks para descargar</h2>
+                <h2 class="text-3xl md:text-4xl font-bold text-neutral-900 mb-12" data-i18n="ebooks-title">Mis Ebooks para descargar</h2>
                 <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                     <!-- Ebook 1 -->
-                    <div class="bg-neutral-800 p-8 rounded-xl shadow-lg border-2 border-neutral-700 hover:border-indigo-600 transition-all duration-300 transform hover:-translate-y-2">
-                        <img src="https://placehold.co/400x500/171717/9ca3af?text=Ebook+1" alt="Portada del Ebook" class="rounded-xl shadow-lg w-full h-auto mb-4" />
-                        <h3 class="text-2xl font-bold text-white mb-2" data-i18n="ebook-1-title">El mito del aprendizaje de idiomas</h3>
-                        <p class="text-neutral-400 mb-4" data-i18n="ebook-1-text">Descubre por qué los métodos tradicionales no funcionan y cómo puedes lograr una fluidez auténtica.</p>
+                    <div class="bg-white p-8 rounded-xl shadow-lg border-2 border-neutral-300 hover:border-indigo-600 transition-all duration-300 transform hover:-translate-y-2">
+                        <img src="https://placehold.co/400x500/e5e5e5/171717?text=Ebook+1" alt="Portada del Ebook" class="rounded-xl shadow-lg w-full h-auto mb-4" />
+                        <h3 class="text-2xl font-bold text-neutral-900 mb-2" data-i18n="ebook-1-title">El mito del aprendizaje de idiomas</h3>
+                        <p class="text-neutral-600 mb-4" data-i18n="ebook-1-text">Descubre por qué los métodos tradicionales no funcionan y cómo puedes lograr una fluidez auténtica.</p>
                         <button class="w-full bg-indigo-600 text-white font-bold py-3 rounded-full mt-4 hover:bg-indigo-700 transition duration-300" data-i18n="cta-download">
                             Descargar Ebook
                         </button>
                     </div>
                     <!-- Ebook 2 -->
-                    <div class="bg-neutral-800 p-8 rounded-xl shadow-lg border-2 border-neutral-700 hover:border-indigo-600 transition-all duration-300 transform hover:-translate-y-2">
-                        <img src="https://placehold.co/400x500/171717/9ca3af?text=Ebook+2" alt="Portada del Ebook" class="rounded-xl shadow-lg w-full h-auto mb-4" />
-                        <h3 class="text-2xl font-bold text-white mb-2" data-i18n="ebook-2-title">Todo lo que no sabías de español y portugués</h3>
-                        <p class="text-neutral-400 mb-4" data-i18n="ebook-2-text">Una guía completa para estudiantes bilingües. Descubre las conexiones y diferencias entre ambos idiomas.</p>
+                    <div class="bg-white p-8 rounded-xl shadow-lg border-2 border-neutral-300 hover:border-indigo-600 transition-all duration-300 transform hover:-translate-y-2">
+                        <img src="https://placehold.co/400x500/e5e5e5/171717?text=Ebook+2" alt="Portada del Ebook" class="rounded-xl shadow-lg w-full h-auto mb-4" />
+                        <h3 class="text-2xl font-bold text-neutral-900 mb-2" data-i18n="ebook-2-title">Todo lo que no sabías de español y portugués</h3>
+                        <p class="text-neutral-600 mb-4" data-i18n="ebook-2-text">Una guía completa para estudiantes bilingües. Descubre las conexiones y diferencias entre ambos idiomas.</p>
                         <button class="w-full bg-indigo-600 text-white font-bold py-3 rounded-full mt-4 hover:bg-indigo-700 transition duration-300" data-i18n="cta-download">
                             Descargar Ebook
                         </button>
@@ -354,48 +377,48 @@
             </div>
         </section>
 
-        <!-- Nueva Sección de Preguntas Frecuentes (FAQ) -->
-        <section id="faq" class="py-16 md:py-24 bg-neutral-950 text-white">
+        <!-- Sección de Preguntas Frecuentes (FAQ) -->
+        <section id="faq" class="py-16 md:py-24 bg-white text-neutral-900">
             <div class="container mx-auto px-4 max-w-4xl">
                 <h2 class="text-3xl md:text-4xl font-bold text-center mb-12" data-i18n="faq-title">
                     Preguntas Frecuentes
                 </h2>
                 <div class="space-y-4">
-                    <div class="bg-neutral-900 p-6 rounded-xl shadow-lg">
+                    <div class="bg-neutral-100 p-6 rounded-xl shadow-lg">
                         <details class="group">
-                            <summary class="flex justify-between items-center font-bold text-lg cursor-pointer text-white" data-i18n="faq-1-q">
+                            <summary class="flex justify-between items-center font-bold text-lg cursor-pointer text-neutral-900" data-i18n="faq-1-q">
                                 ¿Funciona para principiantes absolutos?
                                 <svg class="w-5 h-5 transition-transform duration-300 group-open:rotate-180" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
                                 </svg>
                             </summary>
-                            <p class="mt-4 text-neutral-400" data-i18n="faq-1-a">
+                            <p class="mt-4 text-neutral-600" data-i18n="faq-1-a">
                                 Sí, mi método es ideal para principiantes. Empezamos con los temas que ya te interesan, lo que hace que el aprendizaje sea más natural y menos intimidante desde el primer día.
                             </p>
                         </details>
                     </div>
-                    <div class="bg-neutral-900 p-6 rounded-xl shadow-lg">
+                    <div class="bg-neutral-100 p-6 rounded-xl shadow-lg">
                         <details class="group">
-                            <summary class="flex justify-between items-center font-bold text-lg cursor-pointer text-white" data-i18n="faq-2-q">
+                            <summary class="flex justify-between items-center font-bold text-lg cursor-pointer text-neutral-900" data-i18n="faq-2-q">
                                 ¿Qué tan rápido veré resultados?
                                 <svg class="w-5 h-5 transition-transform duration-300 group-open:rotate-180" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
                                 </svg>
                             </summary>
-                            <p class="mt-4 text-neutral-400" data-i18n="faq-2-a">
+                            <p class="mt-4 text-neutral-600" data-i18n="faq-2-a">
                                 La velocidad del progreso depende de tu dedicación, pero la mayoría de mis alumnos notan una mejora significativa en su confianza y capacidad de conversación en pocas semanas, gracias a la relevancia de los temas.
                             </p>
                         </details>
                     </div>
-                    <div class="bg-neutral-900 p-6 rounded-xl shadow-lg">
+                    <div class="bg-neutral-100 p-6 rounded-xl shadow-lg">
                         <details class="group">
-                            <summary class="flex justify-between items-center font-bold text-lg cursor-pointer text-white" data-i18n="faq-3-q">
+                            <summary class="flex justify-between items-center font-bold text-lg cursor-pointer text-neutral-900" data-i18n="faq-3-q">
                                 ¿Las clases son individuales o en grupo?
                                 <svg class="w-5 h-5 transition-transform duration-300 group-open:rotate-180" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
                                 </svg>
                             </summary>
-                            <p class="mt-4 text-neutral-400" data-i18n="faq-3-a">
+                            <p class="mt-4 text-neutral-600" data-i18n="faq-3-a">
                                 Ofrezco clases individuales para garantizar un enfoque 100% personalizado. Esto nos permite sumergirnos por completo en tus intereses y avanzar a tu propio ritmo.
                             </p>
                         </details>
@@ -405,12 +428,12 @@
         </section>
 
         <!-- Sección de Contacto -->
-        <section id="contacto" class="py-16 md:py-24 bg-neutral-950 text-white">
+        <section id="contacto" class="py-16 md:py-24 bg-white text-neutral-900">
             <div class="container mx-auto px-4 text-center">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4" data-i18n="contact-title">
                     Hablemos de lo que te interesa.
                 </h2>
-                <p class="text-lg md:text-xl max-w-2xl mx-auto mb-8 text-neutral-400" data-i18n="contact-subtitle">
+                <p class="text-lg md:text-xl max-w-2xl mx-auto mb-8 text-neutral-600" data-i18n="contact-subtitle">
                     ¿Listo para una clase que realmente te sirva? Agenda tu sesión de prueba, mándame un mensaje o contacta por WhatsApp.
                 </p>
                 <div class="max-w-xl mx-auto space-y-4">
@@ -423,15 +446,15 @@
                         Contactar por WhatsApp
                     </a>
                     <div class="relative flex py-5 items-center">
-                        <div class="flex-grow border-t border-neutral-700"></div>
+                        <div class="flex-grow border-t border-neutral-300"></div>
                         <span class="flex-shrink mx-4 text-neutral-500" data-i18n="or-separator">o</span>
-                        <div class="flex-grow border-t border-neutral-700"></div>
+                        <div class="flex-grow border-t border-neutral-300"></div>
                     </div>
                     <!-- Formulario de contacto original -->
                     <form id="contact-form" class="space-y-4">
-                        <input type="text" data-i18n-placeholder="contact-name-placeholder" placeholder="Tu nombre completo" class="w-full p-3 rounded-lg border-2 border-neutral-700 bg-neutral-800 text-neutral-200 focus:outline-none focus:border-indigo-500 transition duration-300" required />
-                        <input type="email" data-i18n-placeholder="contact-email-placeholder" placeholder="Tu correo electrónico" class="w-full p-3 rounded-lg border-2 border-neutral-700 bg-neutral-800 text-neutral-200 focus:outline-none focus:border-indigo-500 transition duration-300" required />
-                        <textarea data-i18n-placeholder="contact-message-placeholder" placeholder="¿Qué idioma quieres aprender y cuáles son tus intereses?" rows="4" class="w-full p-3 rounded-lg border-2 border-neutral-700 bg-neutral-800 text-neutral-200 focus:outline-none focus:border-indigo-500 transition duration-300" required></textarea>
+                        <input type="text" data-i18n-placeholder="contact-name-placeholder" placeholder="Tu nombre completo" class="w-full p-3 rounded-lg border-2 border-neutral-300 bg-neutral-200 text-neutral-800 focus:outline-none focus:border-indigo-600 transition duration-300" required />
+                        <input type="email" data-i18n-placeholder="contact-email-placeholder" placeholder="Tu correo electrónico" class="w-full p-3 rounded-lg border-2 border-neutral-300 bg-neutral-200 text-neutral-800 focus:outline-none focus:border-indigo-600 transition duration-300" required />
+                        <textarea data-i18n-placeholder="contact-message-placeholder" placeholder="¿Qué idioma quieres aprender y cuáles son tus intereses?" rows="4" class="w-full p-3 rounded-lg border-2 border-neutral-300 bg-neutral-200 text-neutral-800 focus:outline-none focus:border-indigo-600 transition duration-300" required></textarea>
                         <button type="submit" class="w-full bg-indigo-600 text-white font-bold py-3 rounded-full hover:bg-indigo-800 transition duration-300" data-i18n="contact-submit-cta">
                             Enviar mensaje
                         </button>
@@ -442,9 +465,9 @@
     </main>
 
     <!-- Pie de Página (Footer) -->
-    <footer class="bg-neutral-900 text-neutral-400 py-8">
+    <footer class="bg-neutral-200 text-neutral-600 py-8">
         <div class="container mx-auto px-4 text-center">
-            <p data-i18n="footer-copyright">&copy; 2025 Idiomasweb. Todos los derechos reservados.</p>
+            <p data-i18n="footer-copyright">&copy; 2025 Jonathan. Todos los derechos reservados.</p>
             <p class="mt-2 text-sm" data-i18n="footer-tagline">Diseñado y creado para ayudarte a hablar.</p>
         </div>
     </footer>
@@ -470,8 +493,8 @@
                     "keys-intro": "¿Te imaginas que la clave para hablar con fluidez no fuera memorizar, sino",
                     "keys-highlight": "tener una conversación real?",
                     "about-title": "Un enfoque diferente, un resultado real.",
-                    "about-intro": "Hola, soy <strong class='text-indigo-400'>[Tu Nombre]</strong>, profesor de idiomas con un enfoque único.",
-                    "about-text-1": "Tras años de enseñanza, me di cuenta de que el método tradicional no funcionaba para todos. Vi a muchos alumnos perder la motivación con libros que no les hablaban, y entendí que la verdadera fluidez no viene de la gramática, sino del <strong class='text-indigo-400'>interés</strong>.",
+                    "about-intro": "Hola, soy <strong class='text-indigo-600'>Jonathan</strong>, profesor de idiomas con un enfoque único.",
+                    "about-text-1": "Tras años de enseñanza, me di cuenta de que el método tradicional no funcionaba para todos. Vi a muchos alumnos perder la motivación con libros que no les hablaban, y entendí que la verdadera fluidez no viene de la gramática, sino del <strong class='text-indigo-600'>interés</strong>.",
                     "about-text-2": "Mi misión es simple: ayudarte a comunicarte de forma auténtica sobre lo que te mueve. Por eso, mis clases son un espacio donde tus pasiones, tus proyectos y tus sueños son el centro de todo.",
                     "about-text-3": "Mis especializaciones incluyen la neurociencia del aprendizaje y la lingüística, lo que me permite diseñar planes de estudio no solo efectivos, sino científicamente respaldados para que logres tus objetivos de manera más eficiente.",
                     "method-title": "Mi Método: Conversación con propósito",
@@ -506,7 +529,7 @@
                     "price-2-text": "Perfecto para un progreso constante y comprometido con tu aprendizaje.",
                     "price-2-feature-1": "Plan de estudio personalizado.",
                     "price-2-feature-2": "Seguimiento de progreso.",
-                    "price-3-title": "Paquete de 10 clases",
+                    "price-3-title": "Paquete de 8 clases",
                     "price-3-text": "La mejor opción para un progreso notable, consistente y duradero.",
                     "price-3-feature-1": "Todo lo anterior incluido.",
                     "price-3-feature-2": "Recursos y materiales exclusivos.",
@@ -534,7 +557,7 @@
                     "contact-email-placeholder": "Tu correo electrónico",
                     "contact-message-placeholder": "¿Qué idioma quieres aprender y cuáles son tus intereses?",
                     "contact-submit-cta": "Enviar mensaje",
-                    "footer-copyright": "&copy; 2025 [Tu Nombre]. Todos los derechos reservados.",
+                    "footer-copyright": "&copy; 2025 Jonathan. Todos los derechos reservados.",
                     "footer-tagline": "Diseñado y creado para ayudarte a hablar."
                 },
                 en: {
@@ -554,8 +577,8 @@
                     "keys-intro": "Can you imagine that the key to fluency isn't memorizing, but",
                     "keys-highlight": "having a real conversation?",
                     "about-title": "A Different Approach, Real Results.",
-                    "about-intro": "Hello, I'm <strong class='text-indigo-400'>[Your Name]</strong>, a language teacher with a unique approach.",
-                    "about-text-1": "After years of teaching, I realized the traditional method didn't work for everyone. I saw many students lose motivation with textbooks that didn't connect with their lives, and I understood that true fluency doesn't come from grammar, but from <strong class='text-indigo-400'>interest</strong>.",
+                    "about-intro": "Hello, I'm <strong class='text-indigo-600'>Jonathan</strong>, a language teacher with a unique approach.",
+                    "about-text-1": "After years of teaching, I realized the traditional method didn't work for everyone. I saw many students lose motivation with textbooks that didn't connect with their lives, and I understood that true fluency doesn't come from grammar, but from <strong class='text-indigo-600'>interest</strong>.",
                     "about-text-2": "My mission is simple: to help you communicate authentically about what moves you. That's why my classes are a space where your passions, your projects, and your dreams are at the center of everything.",
                     "about-text-3": "My specializations include the neuroscience of learning and linguistics, allowing me to design study plans that are not only effective but scientifically backed to help you achieve your goals more efficiently.",
                     "method-title": "My Method: Conversation with Purpose",
@@ -590,7 +613,7 @@
                     "price-2-text": "Perfect for consistent progress and a committed approach to your learning.",
                     "price-2-feature-1": "Personalized study plan.",
                     "price-2-feature-2": "Progress tracking.",
-                    "price-3-title": "10-Class Package",
+                    "price-3-title": "8-Class Package",
                     "price-3-text": "The best option for remarkable, consistent, and lasting progress.",
                     "price-3-feature-1": "All of the above included.",
                     "price-3-feature-2": "Exclusive resources and extra materials.",
@@ -619,7 +642,7 @@
                     "contact-email-placeholder": "Your email address",
                     "contact-message-placeholder": "Which language do you want to learn and what are your interests?",
                     "contact-submit-cta": "Send message",
-                    "footer-copyright": "&copy; 2025 [Your Name]. All rights reserved.",
+                    "footer-copyright": "&copy; 2025 Jonathan. All rights reserved.",
                     "footer-tagline": "Designed and created to help you speak."
                 },
                 fr: {
@@ -639,8 +662,8 @@
                     "keys-intro": "Imaginez que la clé de la fluidité ne soit pas la mémorisation, mais",
                     "keys-highlight": "avoir une vraie conversation ?",
                     "about-title": "Une approche différente, des résultats réels.",
-                    "about-intro": "Bonjour, je suis <strong class='text-indigo-400'>[Votre Nom]</strong>, professeur de langues avec une approche unique.",
-                    "about-text-1": "Après des années d'enseignement, j'ai réalisé que la méthode traditionnelle ne fonctionnait pas pour tout le monde. J'ai vu de nombreux étudiants perdre leur motivation avec des manuels qui ne se connectaient pas à leur vie, et j'ai compris que la vraie fluidité ne vient pas de la grammaire, mais de l'<strong class='text-indigo-400'>intérêt</strong>.",
+                    "about-intro": "Bonjour, je suis <strong class='text-indigo-600'>Jonathan</strong>, professeur de langues avec une approche unique.",
+                    "about-text-1": "Après des années d'enseignement, j'ai réalisé que la méthode traditionnelle ne fonctionnait pas pour tout le monde. J'ai vu de nombreux étudiants perdre leur motivation avec des manuels qui ne se connectaient pas à leur vie, et j'ai compris que la vraie fluidité ne vient pas de la grammaire, mais de l'<strong class='text-indigo-600'>intérêt</strong>.",
                     "about-text-2": "Ma mission est simple : vous aider à communiquer de manière authentique sur ce qui vous passionne. C'est pourquoi mes cours sont un espace où vos passions, vos projets et vos rêves sont au centre de tout.",
                     "about-text-3": "Mes spécialisations incluent la neuroscience de l'apprentissage et la linguistique, ce qui me permet de concevoir des plans d'étude non seulement efficaces, mais scientifiquement étayés pour vous aider à atteindre vos objectifs plus efficacement.",
                     "method-title": "Ma Méthode: Conversation avec un but",
@@ -675,7 +698,7 @@
                     "price-2-text": "Parfait para un progrès constant et un engagement dans votre apprentissage.",
                     "price-2-feature-1": "Plan d'étude personnalisé.",
                     "price-2-feature-2": "Suivi des progrès.",
-                    "price-3-title": "Forfait de 10 cours",
+                    "price-3-title": "Forfait de 8 cours",
                     "price-3-text": "La meilleure option para des progrès remarquables, constants et durables.",
                     "price-3-feature-1": "Tout ce qui précède est inclus.",
                     "price-3-feature-2": "Ressources exclusives et matériel supplémentaire.",
@@ -704,7 +727,7 @@
                     "contact-email-placeholder": "Votre adresse e-mail",
                     "contact-message-placeholder": "Quelle langue vous voulez apprendre et quels sont vos intérêts ?",
                     "contact-submit-cta": "Envoyer un message",
-                    "footer-copyright": "&copy; 2025 [Votre Nom]. Tous droits réservés.",
+                    "footer-copyright": "&copy; 2025 Jonathan. Tous droits réservés.",
                     "footer-tagline": "Conçu et créé para vous aider à parler."
                 },
                 pt: {
@@ -713,7 +736,7 @@
                     "nav-el-metodo": "O Método",
                     "nav-comunidades": "Comunidades",
                     "nav-youtube": "YouTube",
-                    "nav-precios": "Preços",
+                    "nav-precos": "Preços",
                     "nav-ebooks": "Ebooks",
                     "nav-faq": "FAQ",
                     "nav-contacto": "Contato",
@@ -724,8 +747,8 @@
                     "keys-intro": "Você imaginou que a chave para a fluência não fosse memorizar, mas",
                     "keys-highlight": "ter uma conversa real?",
                     "about-title": "Uma abordagem diferente, resultados reais.",
-                    "about-intro": "Olá, eu sou <strong class='text-indigo-400'>[Seu Nome]</strong>, professor de idiomas com uma abordagem única.",
-                    "about-text-1": "Após anos de ensino, percebi que o método tradicional não funcionava para todos. Vi muitos alunos perderem a motivação com livros que não se conectavam com suas vidas, e entendi que a verdadeira fluência não vem da gramática, mas do <strong class='text-indigo-400'>interesse</strong>.",
+                    "about-intro": "Olá, eu sou <strong class='text-indigo-600'>Jonathan</strong>, professor de idiomas com uma abordagem única.",
+                    "about-text-1": "Após anos de ensino, percebi que o método tradicional não funcionava para todos. Vi muitos alunos perderem a motivação com livros que não se conectavam com suas vidas, e entendi que a verdadeira fluência não vem da gramática, mas do <strong class='text-indigo-600'>interesse</strong>.",
                     "about-text-2": "Minha missão é simples: ajudar você a se comunicar de forma autêntica sobre o que te move. É por isso que minhas aulas são um espaço onde suas paixões, seus projetos e seus sonhos estão no centro de tudo.",
                     "about-text-3": "Minhas especializações incluem a neurociência da aprendizagem e a linguística, o que me permite projetar planos de estudo não apenas eficazes, mas cientificamente comprovados para que você alcance seus objetivos de forma mais eficiente.",
                     "method-title": "Meu Método: Conversa com propósito",
@@ -760,7 +783,7 @@
                     "price-2-text": "Perfeito para um progresso constante e um aprendizado comprometido.",
                     "price-2-feature-1": "Plano de estudo personalizado.",
                     "price-2-feature-2": "Acompanhamento do progresso.",
-                    "price-3-title": "Pacote de 10 aulas",
+                    "price-3-title": "Pacote de 8 aulas",
                     "price-3-text": "A melhor opção para um progresso notável, consistente e duradouro.",
                     "price-3-feature-1": "Tudo o que foi mencionado acima está incluído.",
                     "price-3-feature-2": "Recursos exclusivos e materiais extras.",
@@ -789,7 +812,7 @@
                     "contact-email-placeholder": "Seu endereço de e-mail",
                     "contact-message-placeholder": "Qual idioma você quer aprender e quais são seus interesses?",
                     "contact-submit-cta": "Enviar mensagem",
-                    "footer-copyright": "&copy; 2025 [Seu Nome]. Todos os direitos reservados.",
+                    "footer-copyright": "&copy; 2025 Jonathan. Todos os direitos reservados.",
                     "footer-tagline": "Projetado e criado para te ajudar a falar."
                 }
             };
@@ -798,12 +821,13 @@
             const menuButton = document.getElementById('menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
             const mobileLinks = mobileMenu.querySelectorAll('a');
-            const priceCards = document.querySelectorAll('#precios > div > div > div');
+            const priceCards = document.querySelectorAll('.price-card');
             const testimonialContainer = document.getElementById('testimonial-container');
+            const prevButton = document.getElementById('prev-testimonial');
+            const nextButton = document.getElementById('next-testimonial');
             let testimonialIndex = 0;
-            const testimonialCount = 3; // Número de testimonios
+            const testimonialCount = 3; 
 
-            // Función para cambiar el idioma
             function setLanguage(lang) {
                 const currentTranslations = translations[lang];
                 document.querySelectorAll('[data-i18n]').forEach(element => {
@@ -823,10 +847,41 @@
                 document.querySelector(`.lang-button[data-lang="${lang}"]`).classList.add('active');
             }
 
-            // Establecer el idioma inicial (por defecto español)
-            setLanguage('es');
+            // Carrusel de testimonios
+            function showTestimonial(index) {
+                const offset = -index * 100;
+                testimonialContainer.style.transform = `translateX(${offset}%)`;
+            }
+
+            // Cambiar automáticamente el testimonio
+            let carouselInterval = setInterval(() => {
+                testimonialIndex = (testimonialIndex + 1) % testimonialCount;
+                showTestimonial(testimonialIndex);
+            }, 5000); // Cambia el testimonio cada 5 segundos
+
+            // Botones de navegación del carrusel
+            prevButton.addEventListener('click', () => {
+                clearInterval(carouselInterval); // Detiene el carrusel automático
+                testimonialIndex = (testimonialIndex - 1 + testimonialCount) % testimonialCount;
+                showTestimonial(testimonialIndex);
+                carouselInterval = setInterval(() => {
+                    testimonialIndex = (testimonialIndex + 1) % testimonialCount;
+                    showTestimonial(testimonialIndex);
+                }, 5000); // Reinicia el temporizador
+            });
+
+            nextButton.addEventListener('click', () => {
+                clearInterval(carouselInterval); // Detiene el carrusel automático
+                testimonialIndex = (testimonialIndex + 1) % testimonialCount;
+                showTestimonial(testimonialIndex);
+                carouselInterval = setInterval(() => {
+                    testimonialIndex = (testimonialIndex + 1) % testimonialCount;
+                    showTestimonial(testimonialIndex);
+                }, 5000); // Reinicia el temporizador
+            });
 
             // --- Funcionalidad del selector de idiomas ---
+            setLanguage('es'); // Establecer el idioma inicial (por defecto español)
             langButtons.forEach(button => {
                 button.addEventListener('click', () => {
                     const lang = button.getAttribute('data-lang');
@@ -859,18 +914,22 @@
                 });
             });
             
-            // --- Funcionalidad del carrusel de testimonios ---
-            setInterval(() => {
-                testimonialIndex = (testimonialIndex + 1) % testimonialCount;
-                const offset = -testimonialIndex * 100;
-                testimonialContainer.style.transform = `translateX(${offset}%)`;
-            }, 5000); // Cambia el testimonio cada 5 segundos
-
             // Manejo del formulario de contacto general
             document.getElementById('contact-form').addEventListener('submit', (e) => {
                 e.preventDefault();
+                // Aquí podrías agregar la lógica para enviar el formulario a un backend
                 console.log('Formulario de contacto enviado (simulado). ¡Gracias!');
                 e.target.reset();
+            });
+        });
+
+        // Función para el desplazamiento suave (smooth scrolling)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
             });
         });
     </script>
