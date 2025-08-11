@@ -1,0 +1,34 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f4f4f5; /* Fondo claro */
+}
+/* Estilos para el menú de hamburguesa */
+#mobile-menu.hidden {
+    display: none;
+}
+/* Estilos para el gradiente de texto */
+.highlight-text {
+    background-image: linear-gradient(to right, #fcd34d, #4ade80);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+.lang-button {
+    border-radius: 9999px; /* Botones completamente redondos */
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+.lang-button.active {
+    background-color: #4f46e5; /* Color de fondo para el botón activo */
+    color: #ffffff;
+}
+/* Estilos para carrusel de testimonios */
+.testimonial-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+.testimonial-card {
+    min-width: 100%;
+}
