@@ -65,6 +65,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "ebook-2-title": "Todo lo que no sabías de español y portugués",
             "ebook-2-text": "Una guía completa para estudiantes bilingües. Descubre las conexiones y diferencias entre ambos idiomas.",
             "cta-download": "Descargar Ebook",
+            "modal-title": "¡Casi es tuyo!",
+            "modal-subtitle": "Ingresa tu correo para descargar el ebook gratuito.",
+            "modal-submit": "Descargar ahora",
             "faq-title": "Preguntas Frecuentes",
             "faq-1-q": "¿Funciona para principiantes absolutos?",
             "faq-1-a": "Sí, mi método es ideal para principiantes. Empezamos con los temas que ya te interesan, lo que hace que el aprendizaje sea más natural y menos intimidante desde el primer día.",
@@ -149,6 +152,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "ebook-2-title": "All you didn't know about Spanish and Portuguese",
             "ebook-2-text": "A comprehensive guide for bilingual students. Discover the connections and differences between both languages.",
             "cta-download": "Download Ebook",
+            "modal-title": "It's almost yours!",
+            "modal-subtitle": "Enter your email to download the free ebook.",
+            "modal-submit": "Download now",
             "email-placeholder": "Your email address",
             "faq-title": "Frequently Asked Questions",
             "faq-1-q": "Does it work for absolute beginners?",
@@ -234,6 +240,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "ebook-2-title": "Todo lo que vous ne saviez pas sur l'espagnol et le portugais",
             "ebook-2-text": "Un guide complet para les étudiants bilingues. Découvrez les liens et les différences entre les deux langues.",
             "cta-download": "Télécharger Ebook",
+            "modal-title": "C'est presque à vous !",
+            "modal-subtitle": "Entrez votre e-mail pour télécharger l'ebook gratuit.",
+            "modal-submit": "Télécharger maintenant",
             "email-placeholder": "Votre adresse e-mail",
             "faq-title": "Questions Fréquemment Posées",
             "faq-1-q": "Est-ce que ça marche para les grands débutants ?",
@@ -319,6 +328,9 @@ document.addEventListener('DOMContentLoaded', () => {
             "ebook-2-title": "Tudo o que você não sabia sobre espanhol e português",
             "ebook-2-text": "Um guia completo para estudantes bilíngues. Descubra as conexões y diferencias entre as duas línguas.",
             "cta-download": "Baixar Ebook",
+            "modal-title": "É quase seu!",
+            "modal-subtitle": "Insira seu e-mail para baixar o ebook gratuito.",
+            "modal-submit": "Baixar agora",
             "email-placeholder": "Seu endereço de e-mail",
             "faq-title": "Perguntas Frequentes",
             "faq-1-q": "Funciona para iniciantes absolutos?",
@@ -444,6 +456,61 @@ document.addEventListener('DOMContentLoaded', () => {
         // Aquí podrías agregar la lógica para enviar el formulario a un backend
         console.log('Formulario de contacto enviado (simulado). ¡Gracias!');
         e.target.reset();
+    });
+
+    // --- Funcionalidad del Modal de Ebooks ---
+    const emailModal = document.getElementById('email-modal');
+    const closeModalButton = document.getElementById('close-modal');
+    const ebookForm = document.getElementById('ebook-form');
+    const emailInput = document.getElementById('email-input');
+    const modalMessage = document.getElementById('modal-message');
+    const downloadButtons = document.querySelectorAll('[data-ebook-id]');
+    let currentEbookId = null;
+
+    const ebookLinks = {
+        ebook1: 'URL_Dhttps://drive.google.com/file/d/1DzhBWp1ePh2PvVFHt2COFJiWzAS05SMg/view?usp=sharingEL_EBOOK_1.pdf', // Reemplaza con la URL de tu Ebook
+        ebook2: 'URL_DEL_EBOOK_2.pdf'  // Reemplaza con la URL de tu Ebook
+    };
+
+    function openModal(ebookId) {
+        currentEbookId = ebookId;
+        emailModal.classList.remove('hidden');
+    }
+
+    function closeModal() {
+        emailModal.classList.add('hidden');
+        emailInput.value = '';
+        modalMessage.textContent = '';
+    }
+
+    downloadButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const ebookId = button.getAttribute('data-ebook-id');
+            openModal(ebookId);
+        });
+    });
+
+    closeModalButton.addEventListener('click', closeModal);
+
+    ebookForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = emailInput.value;
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwCcospXOMR7IfwT8smdL6GmA-vlPa4FvgfhxRUIN0T1Adu1FT_WGbNBTxvbzV3czXcZw/exec';
+
+        modalMessage.textContent = 'Enviando...';
+
+        fetch(scriptURL, { method: 'POST', body: new FormData(ebookForm)})
+            .then(response => {
+                modalMessage.textContent = '¡Gracias! Descargando tu ebook...';
+                setTimeout(() => {
+                    window.open(ebookLinks[currentEbookId], '_blank');
+                    closeModal();
+                }, 2000);
+            })
+            .catch(error => {
+                modalMessage.textContent = 'Error. Por favor, intenta de nuevo.';
+                console.error('Error!', error.message);
+            });
     });
 });
 
