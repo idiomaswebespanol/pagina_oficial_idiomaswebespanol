@@ -32,3 +32,15 @@ body {
 .testimonial-card {
     min-width: 100%;
 }
+/* Estilos para el modal */
+#email-modal.hidden {
+    display: none;
+}
+
+#email-modal {
+    display: flex; /* Usar flex para centrar */
+}
+
+#email-modal > div {
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
