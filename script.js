@@ -395,26 +395,7 @@ document.addEventListener('DOMContentLoaded', () => {
         showTestimonial(testimonialIndex);
     }, 5000); // Cambia el testimonio cada 5 segundos
 
-    // Botones de navegación del carrusel
-    prevButton.addEventListener('click', () => {
-        clearInterval(carouselInterval); // Detiene el carrusel automático
-        testimonialIndex = (testimonialIndex - 1 + testimonialCount) % testimonialCount;
-        showTestimonial(testimonialIndex);
-        carouselInterval = setInterval(() => {
-            testimonialIndex = (testimonialIndex + 1) % testimonialCount;
-            showTestimonial(testimonialIndex);
-        }, 5000); // Reinicia el temporizador
-    });
-
-    nextButton.addEventListener('click', () => {
-        clearInterval(carouselInterval); // Detiene el carrusel automático
-        testimonialIndex = (testimonialIndex + 1) % testimonialCount;
-        showTestimonial(testimonialIndex);
-        carouselInterval = setInterval(() => {
-            testimonialIndex = (testimonialIndex + 1) % testimonialCount;
-            showTestimonial(testimonialIndex);
-        }, 5000); // Reinicia el temporizador
-    });
+    showTestimonial(0); // Mostrar el primer testimonio por defecto
 
     // --- Funcionalidad del selector de idiomas ---
     setLanguage('es'); // Establecer el idioma inicial (por defecto español)
@@ -468,7 +449,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentEbookId = null;
 
     const ebookLinks = {
-        ebook1: 'URL_Dhttps://drive.google.com/file/d/1DzhBWp1ePh2PvVFHt2COFJiWzAS05SMg/view?usp=sharingEL_EBOOK_1.pdf', // Reemplaza con la URL de tu Ebook
+        ebook1: 'https://drive.google.com/file/d/1DzhBWp1ePh2PvVFHt2COFJiWzAS05SMg/', // Reemplaza con la URL de tu Ebook
         ebook2: 'URL_DEL_EBOOK_2.pdf'  // Reemplaza con la URL de tu Ebook
     };
 
