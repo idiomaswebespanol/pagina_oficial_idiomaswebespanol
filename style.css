@@ -21,8 +21,8 @@ body {
     transition: all 0.3s ease;
 }
 .lang-button.active {
-    background-color: #4f46e5; /* Color de fondo para el botón activo */
-    color: #ffffff;
+    background-color: #4f46e5 !important; /* Color de fondo para el botón activo */
+    color: #ffffff !important;
 }
 /* Estilos para carrusel de testimonios */
 .testimonial-container {
